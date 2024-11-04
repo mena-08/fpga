@@ -126,8 +126,8 @@ module vga_controller(
             blank = 1'b1;
             
         if (blank == 1) begin    
-            drawX = 0;
-            drawY = 0; end
+            drawX = 999;
+            drawY = 999; end
         
         else begin
             drawX = hc;
