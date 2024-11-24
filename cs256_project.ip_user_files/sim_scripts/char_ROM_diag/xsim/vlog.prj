@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../../cs256_project.gen/sources_1/ip/char_ROM_diag/sim/char_ROM_diag.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

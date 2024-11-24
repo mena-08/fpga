@@ -1,0 +1,413 @@
+
+*** Running vivado
+    with args -log project_toplevel.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source project_toplevel.tcl
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source project_toplevel.tcl -notrace
+Command: synth_design -top project_toplevel -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 2283892
+WARNING: [Synth 8-6901] identifier 'counter' is used before its declaration [/home/khogeesa/Desktop/cs256_project/fpga/source_files/enemy.sv:51]
+WARNING: [Synth 8-6901] identifier 'counter' is used before its declaration [/home/khogeesa/Desktop/cs256_project/fpga/source_files/enemy_flipped.sv:51]
+WARNING: [Synth 8-992] en is already implicitly declared earlier [/home/khogeesa/Desktop/cs256_project/fpga/source_files/project_toplevel.sv:95]
+WARNING: [Synth 8-992] keycode is already implicitly declared earlier [/home/khogeesa/Desktop/cs256_project/fpga/source_files/project_toplevel.sv:211]
+WARNING: [Synth 8-6901] identifier 'hit' is used before its declaration [/home/khogeesa/Desktop/cs256_project/fpga/source_files/project_toplevel.sv:96]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 2374.945 ; gain = 0.000 ; free physical = 482938 ; free virtual = 505742
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'project_toplevel' [/home/khogeesa/Desktop/cs256_project/fpga/source_files/project_toplevel.sv:23]
+	Parameter transparent_mask bound to: 12'b000000000000 
+INFO: [Synth 8-6157] synthesizing module 'enemy' [/home/khogeesa/Desktop/cs256_project/fpga/source_files/enemy.sv:23]
+	Parameter width bound to: 5 - type: integer 
+	Parameter length bound to: 40 - type: integer 
+	Parameter x_size bound to: 5 - type: integer 
+	Parameter y_size bound to: 40 - type: integer 
+	Parameter x_start bound to: 80 - type: integer 
+	Parameter y_start bound to: 480 - type: integer 
+	Parameter transparent_mask bound to: 12'b000000000000 
+INFO: [Synth 8-6157] synthesizing module 'enemy_ROM' [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2281422-rsws09.kaust.edu.sa/realtime/enemy_ROM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'enemy_ROM' (1#1) [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2281422-rsws09.kaust.edu.sa/realtime/enemy_ROM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'enemy' (2#1) [/home/khogeesa/Desktop/cs256_project/fpga/source_files/enemy.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'enemy_flipped' [/home/khogeesa/Desktop/cs256_project/fpga/source_files/enemy_flipped.sv:23]
+	Parameter width bound to: 5 - type: integer 
+	Parameter length bound to: 40 - type: integer 
+	Parameter x_size bound to: 40 - type: integer 
+	Parameter y_size bound to: 5 - type: integer 
+	Parameter x_start bound to: 640 - type: integer 
+	Parameter y_start bound to: 60 - type: integer 
+	Parameter transparent_mask bound to: 12'b000000000000 
+INFO: [Synth 8-6155] done synthesizing module 'enemy_flipped' (3#1) [/home/khogeesa/Desktop/cs256_project/fpga/source_files/enemy_flipped.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2281422-rsws09.kaust.edu.sa/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (4#1) [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2281422-rsws09.kaust.edu.sa/realtime/clk_wiz_0_stub.v:5]
+WARNING: [Synth 8-7071] port 'reset' of module 'clk_wiz_0' is unconnected for instance 'instance_name' [/home/khogeesa/Desktop/cs256_project/fpga/source_files/project_toplevel.sv:48]
+WARNING: [Synth 8-7071] port 'locked' of module 'clk_wiz_0' is unconnected for instance 'instance_name' [/home/khogeesa/Desktop/cs256_project/fpga/source_files/project_toplevel.sv:48]
+WARNING: [Synth 8-7023] instance 'instance_name' of module 'clk_wiz_0' has 4 connections declared, but only 2 given [/home/khogeesa/Desktop/cs256_project/fpga/source_files/project_toplevel.sv:48]
+INFO: [Synth 8-6157] synthesizing module 'vga_controller' [/home/khogeesa/Desktop/cs256_project/fpga/source_files/vga_controller.sv:23]
+	Parameter hpixels bound to: 799 - type: integer 
+	Parameter hsync_size bound to: 96 - type: integer 
+	Parameter hbp bound to: 48 - type: integer 
+	Parameter h_res bound to: 640 - type: integer 
+	Parameter vlines bound to: 524 - type: integer 
+	Parameter vsync_size bound to: 2 - type: integer 
+	Parameter vbp bound to: 33 - type: integer 
+	Parameter v_res bound to: 480 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'vga_controller' (5#1) [/home/khogeesa/Desktop/cs256_project/fpga/source_files/vga_controller.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2281422-rsws09.kaust.edu.sa/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (6#1) [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2281422-rsws09.kaust.edu.sa/realtime/blk_mem_gen_0_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (19) of module 'blk_mem_gen_0' [/home/khogeesa/Desktop/cs256_project/fpga/source_files/project_toplevel.sv:55]
+INFO: [Synth 8-6157] synthesizing module 'graphics_driver' [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/sources_1/imports/source_files/graphics_driver.sv:23]
+	Parameter transparent_mask bound to: 12'b000000000000 
+WARNING: [Synth 8-6090] variable 'blank' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/sources_1/imports/source_files/graphics_driver.sv:51]
+INFO: [Synth 8-6155] done synthesizing module 'graphics_driver' (7#1) [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/sources_1/imports/source_files/graphics_driver.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'char_driver' [/home/khogeesa/Desktop/cs256_project/fpga/source_files/char_driver.sv:22]
+	Parameter x_start bound to: 320 - type: integer 
+	Parameter y_start bound to: 240 - type: integer 
+	Parameter x_size bound to: 32 - type: integer 
+	Parameter y_size bound to: 32 - type: integer 
+	Parameter transparent_mask bound to: 12'b000000000000 
+INFO: [Synth 8-6157] synthesizing module 'char_ROM' [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2281422-rsws09.kaust.edu.sa/realtime/char_ROM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'char_ROM' (8#1) [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2281422-rsws09.kaust.edu.sa/realtime/char_ROM_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'char_ROM_diag' [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2281422-rsws09.kaust.edu.sa/realtime/char_ROM_diag_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'char_ROM_diag' (9#1) [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2281422-rsws09.kaust.edu.sa/realtime/char_ROM_diag_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'char_driver' (10#1) [/home/khogeesa/Desktop/cs256_project/fpga/source_files/char_driver.sv:22]
+INFO: [Synth 8-6157] synthesizing module 'lfsr_random_dynamic_seed' [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/sources_1/imports/source_files/lfsr_random_12bit.sv:1]
+	Parameter SEED_INTERVAL bound to: 1000 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'lfsr_random_dynamic_seed' (11#1) [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/sources_1/imports/source_files/lfsr_random_12bit.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ps2_keyboard' [/home/khogeesa/Desktop/cs256_project/fpga/source_files/ps2_keyboard.sv:7]
+INFO: [Synth 8-6155] done synthesizing module 'ps2_keyboard' (12#1) [/home/khogeesa/Desktop/cs256_project/fpga/source_files/ps2_keyboard.sv:7]
+INFO: [Synth 8-6155] done synthesizing module 'project_toplevel' (13#1) [/home/khogeesa/Desktop/cs256_project/fpga/source_files/project_toplevel.sv:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2378.992 ; gain = 4.047 ; free physical = 483690 ; free virtual = 506494
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2393.836 ; gain = 18.891 ; free physical = 483712 ; free virtual = 506518
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2393.836 ; gain = 18.891 ; free physical = 483712 ; free virtual = 506518
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2393.836 ; gain = 0.000 ; free physical = 483707 ; free virtual = 506512
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'instance_name'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'instance_name'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/char_ROM/char_ROM/char_ROM_in_context.xdc] for cell 'char_drive0/char_ROM_0'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/char_ROM/char_ROM/char_ROM_in_context.xdc] for cell 'char_drive0/char_ROM_0'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/char_ROM_diag/char_ROM_diag/char_ROM_diag_in_context.xdc] for cell 'char_drive0/char_ROM_1'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/char_ROM_diag/char_ROM_diag/char_ROM_diag_in_context.xdc] for cell 'char_drive0/char_ROM_1'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'back_rom_0'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'back_rom_0'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[0].enemy_inst/enemy_ROM_0'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[0].enemy_inst/enemy_ROM_0'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[0].enemy_flipped_inst/enemy_ROM_0'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[0].enemy_flipped_inst/enemy_ROM_0'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[1].enemy_inst/enemy_ROM_0'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[1].enemy_inst/enemy_ROM_0'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[1].enemy_flipped_inst/enemy_ROM_0'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[1].enemy_flipped_inst/enemy_ROM_0'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[2].enemy_inst/enemy_ROM_0'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[2].enemy_inst/enemy_ROM_0'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[2].enemy_flipped_inst/enemy_ROM_0'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[2].enemy_flipped_inst/enemy_ROM_0'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[3].enemy_inst/enemy_ROM_0'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[3].enemy_inst/enemy_ROM_0'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[3].enemy_flipped_inst/enemy_ROM_0'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[3].enemy_flipped_inst/enemy_ROM_0'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[4].enemy_inst/enemy_ROM_0'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[4].enemy_inst/enemy_ROM_0'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[4].enemy_flipped_inst/enemy_ROM_0'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[4].enemy_flipped_inst/enemy_ROM_0'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[5].enemy_inst/enemy_ROM_0'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[5].enemy_inst/enemy_ROM_0'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[5].enemy_flipped_inst/enemy_ROM_0'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[5].enemy_flipped_inst/enemy_ROM_0'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[6].enemy_inst/enemy_ROM_0'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[6].enemy_inst/enemy_ROM_0'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[6].enemy_flipped_inst/enemy_ROM_0'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[6].enemy_flipped_inst/enemy_ROM_0'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[7].enemy_inst/enemy_ROM_0'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[7].enemy_inst/enemy_ROM_0'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[7].enemy_flipped_inst/enemy_ROM_0'
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM/enemy_ROM_in_context.xdc] for cell 'enemies[7].enemy_flipped_inst/enemy_ROM_0'
+Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/constrs_1/imports/cs256-fall24/nexys-a7-100t-master.xdc]
+Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/constrs_1/imports/cs256-fall24/nexys-a7-100t-master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/constrs_1/imports/cs256-fall24/nexys-a7-100t-master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/project_toplevel_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/project_toplevel_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2562.586 ; gain = 0.000 ; free physical = 483626 ; free virtual = 506431
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2562.586 ; gain = 0.000 ; free physical = 483616 ; free virtual = 506420
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2562.586 ; gain = 187.641 ; free physical = 483711 ; free virtual = 506516
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2562.586 ; gain = 187.641 ; free physical = 483710 ; free virtual = 506515
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property KEEP_HIERARCHY = SOFT for instance_name. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for char_drive0/char_ROM_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for char_drive0/char_ROM_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for back_rom_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \enemies[0].enemy_inst /enemy_ROM_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \enemies[0].enemy_flipped_inst /enemy_ROM_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \enemies[1].enemy_inst /enemy_ROM_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \enemies[1].enemy_flipped_inst /enemy_ROM_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \enemies[2].enemy_inst /enemy_ROM_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \enemies[2].enemy_flipped_inst /enemy_ROM_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \enemies[3].enemy_inst /enemy_ROM_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \enemies[3].enemy_flipped_inst /enemy_ROM_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \enemies[4].enemy_inst /enemy_ROM_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \enemies[4].enemy_flipped_inst /enemy_ROM_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \enemies[5].enemy_inst /enemy_ROM_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \enemies[5].enemy_flipped_inst /enemy_ROM_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \enemies[6].enemy_inst /enemy_ROM_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \enemies[6].enemy_flipped_inst /enemy_ROM_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \enemies[7].enemy_inst /enemy_ROM_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \enemies[7].enemy_flipped_inst /enemy_ROM_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2562.586 ; gain = 187.641 ; free physical = 483707 ; free virtual = 506512
+---------------------------------------------------------------------------------
+DSP Debug: swapped A/B pins for adder 0x32f11fe0
+DSP Debug: swapped A/B pins for adder 0x31d6d270
+DSP Debug: swapped A/B pins for adder 0x3382efa0
+DSP Debug: swapped A/B pins for adder 0x329d3810
+DSP Debug: swapped A/B pins for adder 0x33d3aa80
+DSP Debug: swapped A/B pins for adder 0x34fe47b0
+DSP Debug: swapped A/B pins for adder 0x328fb1d0
+DSP Debug: swapped A/B pins for adder 0x30034ee0
+DSP Debug: swapped A/B pins for adder 0x3416ea50
+WARNING: [Synth 8-327] inferring latch for variable 'diag_reg' [/home/khogeesa/Desktop/cs256_project/fpga/source_files/char_driver.sv:122]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 2562.586 ; gain = 187.641 ; free physical = 482612 ; free virtual = 505415
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   33 Bit       Adders := 32    
+	   2 Input   32 Bit       Adders := 2     
+	   3 Input   13 Bit       Adders := 2     
+	   2 Input   12 Bit       Adders := 33    
+	   2 Input   11 Bit       Adders := 52    
+	   2 Input   10 Bit       Adders := 16    
+	   3 Input   10 Bit       Adders := 2     
+	   3 Input    8 Bit       Adders := 32    
+	   2 Input    8 Bit       Adders := 8     
+	   2 Input    4 Bit       Adders := 17    
+	   3 Input    3 Bit       Adders := 16    
++---XORs : 
+	   4 Input      1 Bit         XORs := 1     
++---Registers : 
+	               12 Bit    Registers := 18    
+	               11 Bit    Registers := 37    
+	               10 Bit    Registers := 16    
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 36    
+	                1 Bit    Registers := 26    
++---Muxes : 
+	   2 Input   12 Bit        Muxes := 5     
+	   2 Input   11 Bit        Muxes := 18    
+	   2 Input   10 Bit        Muxes := 8     
+	   2 Input    8 Bit        Muxes := 36    
+	   2 Input    4 Bit        Muxes := 22    
+	   5 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP addra0, operation Mode is: C+A*(B:0x280).
+DSP Report: operator addra0 is absorbed into DSP addra0.
+DSP Report: operator addra1 is absorbed into DSP addra0.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:00:51 . Memory (MB): peak = 3018.570 ; gain = 643.625 ; free physical = 482425 ; free virtual = 505243
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping	Report (see note below)
++-----------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name      | DSP Mapping   | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|project_toplevel | C+A*(B:0x280) | 11     | 10     | 11     | -      | 19     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++-----------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:53 ; elapsed = 00:00:58 . Memory (MB): peak = 3018.570 ; gain = 643.625 ; free physical = 482491 ; free virtual = 505304
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:54 ; elapsed = 00:00:59 . Memory (MB): peak = 3018.570 ; gain = 643.625 ; free physical = 482452 ; free virtual = 505266
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5966] Removing register instance (\keyboard_controller/key_valid_reg__0 ) from module (project_toplevel) as it has self-loop and (\keyboard_controller/key_valid_reg ) is actual driver [/home/khogeesa/Desktop/cs256_project/fpga/source_files/ps2_keyboard.sv:35]
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 3018.570 ; gain = 643.625 ; free physical = 482390 ; free virtual = 505203
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-4442] BlackBox module instance_name has unconnected pin reset
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:59 ; elapsed = 00:01:04 . Memory (MB): peak = 3018.570 ; gain = 643.625 ; free physical = 483456 ; free virtual = 506270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:59 ; elapsed = 00:01:04 . Memory (MB): peak = 3018.570 ; gain = 643.625 ; free physical = 483451 ; free virtual = 506265
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:00 ; elapsed = 00:01:05 . Memory (MB): peak = 3018.570 ; gain = 643.625 ; free physical = 483413 ; free virtual = 506227
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:00 ; elapsed = 00:01:05 . Memory (MB): peak = 3018.570 ; gain = 643.625 ; free physical = 483418 ; free virtual = 506231
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:00 ; elapsed = 00:01:05 . Memory (MB): peak = 3018.570 ; gain = 643.625 ; free physical = 483409 ; free virtual = 506223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:00 ; elapsed = 00:01:05 . Memory (MB): peak = 3018.570 ; gain = 643.625 ; free physical = 483402 ; free virtual = 506215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
+|2     |blk_mem_gen_0 |         1|
+|3     |char_ROM      |         1|
+|4     |char_ROM_diag |         1|
+|5     |enemy_ROM     |        16|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |blk_mem_gen   |     1|
+|2     |char_ROM      |     1|
+|3     |char_ROM_diag |     1|
+|4     |clk_wiz       |     1|
+|5     |enemy_ROM     |     1|
+|6     |enemy_ROM_    |    15|
+|21    |BUFG          |     1|
+|22    |CARRY4        |   624|
+|23    |DSP48E1       |     1|
+|24    |LUT1          |   212|
+|25    |LUT2          |  1320|
+|26    |LUT3          |   558|
+|27    |LUT4          |   472|
+|28    |LUT5          |   640|
+|29    |LUT6          |  1001|
+|30    |FDCE          |   437|
+|31    |FDPE          |   219|
+|32    |FDRE          |   234|
+|33    |LD            |     1|
+|34    |LDC           |    12|
+|35    |IBUF          |     6|
+|36    |OBUF          |    14|
++------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:00 ; elapsed = 00:01:05 . Memory (MB): peak = 3018.570 ; gain = 643.625 ; free physical = 483400 ; free virtual = 506214
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 1 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:57 ; elapsed = 00:01:02 . Memory (MB): peak = 3018.570 ; gain = 474.875 ; free physical = 483444 ; free virtual = 506258
+Synthesis Optimization Complete : Time (s): cpu = 00:01:00 ; elapsed = 00:01:05 . Memory (MB): peak = 3018.578 ; gain = 643.625 ; free physical = 483444 ; free virtual = 506258
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3018.578 ; gain = 0.000 ; free physical = 483489 ; free virtual = 506302
+INFO: [Netlist 29-17] Analyzing 638 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3050.586 ; gain = 0.000 ; free physical = 483511 ; free virtual = 506324
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 13 instances were transformed.
+  LD => LDCE: 1 instance 
+  LDC => LDCE: 12 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+42 Infos, 11 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 3050.586 ; gain = 675.641 ; free physical = 483662 ; free virtual = 506472
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint '/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/synth_1/project_toplevel.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file project_toplevel_utilization_synth.rpt -pb project_toplevel_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 19 15:16:39 2024...

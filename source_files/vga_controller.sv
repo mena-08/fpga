@@ -58,26 +58,7 @@ module vga_controller(
     logic [10:0] hc = 0, vc = 0;
     logic clk_50, clk_25;
 
-//    assign pixel_clk = clk_main;
 
-    //  Potentially add sync signal
-    
-    // CLK Divider
-//    always_ff @ (posedge clk_main)
-//    begin
-//        if (rst)
-//            clk_50 <= 1'b0;
-//        else
-//            clk_50 = ~ (clk_50)  ;      
-//    end
-    
-//        always_ff @ (posedge clk_50)
-//    begin
-//        if (rst)
-//            clk_25 <= 1'b0;
-//        else
-//            clk_25 <= ~ (clk_25);      
-//    end
     
     
         //  Increment and Reset the vertical and horizontal counters
@@ -134,6 +115,9 @@ module vga_controller(
             drawY = vc;  end          
     end
     
+endmodule
+
+
 //    assign blank = blank_mask[0];
 //    assign drawX = hc;
 //    assign drawY = vc;
@@ -227,13 +211,4 @@ module vga_controller(
 //        else
 //            blank_ff = 1'b0;
 //    end
-    
-    
-endmodule
-
-
-
-
-
-
 

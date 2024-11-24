@@ -1,0 +1,2 @@
+char_ROM.v,verilog,xil_defaultlib,../../../../cs256_project.gen/sources_1/ip/char_ROM/sim/char_ROM.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

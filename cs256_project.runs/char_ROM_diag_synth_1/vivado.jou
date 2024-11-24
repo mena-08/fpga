@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Nov 13 12:29:10 2024
+# Process ID: 1554286
+# Current directory: /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/char_ROM_diag_synth_1
+# Command line: vivado -log char_ROM_diag.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source char_ROM_diag.tcl
+# Log file: /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/char_ROM_diag_synth_1/char_ROM_diag.vds
+# Journal file: /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/char_ROM_diag_synth_1/vivado.jou
+#-----------------------------------------------------------
+source char_ROM_diag.tcl -notrace
