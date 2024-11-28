@@ -31,13 +31,19 @@ module project_toplevel(
 //    Buttons
     input BTNC, BTNU, BTNL, BTNR, BTND,
     
+    
     output VGA_HS,
     output VGA_VS,
     output [3:0]VGA_R,
     output [3:0]VGA_G,
-    output [3:0]VGA_B
+    output [3:0]VGA_B,
+    output [7:0]LED,
+    output CA, CB, CC, CD,CE,CF, CG, DP,
+    output [7:0] AN
+
     );
     
+
     logic [11:0]background, foreground, char_color, back_rom;
     wire pixel_clk;
     wire frame_clk;
@@ -58,11 +64,93 @@ module project_toplevel(
 
 //    assign background = 12'hFFF;
 
+     // PS/2 Keyboard Control
+    logic [31:0] keycode;   // Last received keycode
+    logic valid;           // Indicates valid keycode
+    logic up, down, left, right; // Movement controls derived from keyboard
+
+    reg CLK50MHZ=0;    
+
+    always @(posedge(CLK100MHZ))begin
+        CLK50MHZ<=~CLK50MHZ;
+    end
+
+    PS2Receiver keyboard (
+    .clk(CLK50MHZ),
+    .kclk(PS2_CLK),
+    .kdata(PS2_DATA),
+    .keycodeout(keycode[31:0])
+    );
+    
+    assign LED = keycode[15:0];
+    
+    
+    
+    logic hex_clk;
+    logic [16:0] hex_counter=0;
+    
+    assign hex_clk = hex_counter[16];
+    
+
+     always_ff @ (posedge CLK100MHZ ) begin
+       hex_counter <= hex_counter+1; 
+     end
+        
+    // Map the keycode to the 7-segment display
+
+    
+    // Register to hold the previous keycode
+    logic [31:0] prev_keycode;
+
+    // Decode keycodes to movement controls
+   // Decode keycodes to movement controls, including diagonals
+   always_ff @(posedge CLK100MHZ or negedge CPU_RESETN) begin
+    if (!CPU_RESETN) begin
+        up <= 0;
+        down <= 0;
+        left <= 0;
+        right <= 0;
+        prev_keycode <= 32'b0;  // Reset previous keycode
+    end else begin
+        if (keycode) begin
+            if (keycode[15:8] == 8'hE0) begin
+                // Handle extended scan codes for pressed keys
+                case (keycode[7:0])
+                    8'h75: up <= 1;        // Up arrow key
+                    8'h72: down <= 1;      // Down arrow key
+                    8'h6B: left <= 1;      // Left arrow key
+                    8'h74: right <= 1;     // Right arrow key
+                    default: begin
+                        // Handle other extended keys if needed
+                    end
+                endcase
+            end else if (keycode[15:8] == 8'hF0) begin
+                // Handle break codes for released keys
+                case (keycode[7:0])
+                    8'h75: up <= 0;        // Up arrow key released
+                    8'h72: down <= 0;      // Down arrow key released
+                    8'h6B: left <= 0;      // Left arrow key released
+                    8'h74: right <= 0;     // Right arrow key released
+                    default: begin
+                        // Handle other break codes if needed
+                    end
+                endcase
+            end
+        end
+
+            // Update the previous keycode
+            prev_keycode <= keycode;
+        end
+    end
+
+    
+
+
     graphics_driver graphics_driver0 (.pixel_clk(pixel_clk), .rst(!CPU_RESETN), .blank_in(blank_wire), .hs_in(VGA_HS_wire), .vs_in(VGA_VS_wire), .drawX(), .drawY(), .background(background), .foreground(foreground), .hs(VGA_HS), .vs(VGA_VS), .frame_clk(), .RGB({VGA_R, VGA_G, VGA_B}));
 
-//    char_driver char_drive0(.pixel_clk(pixel_clk), .frame_clk(frame_clk), .rst(!CPU_RESETN), .en(en), .controls({BTND, BTNR, BTNL, BTNU}), .drawX(drawX), .drawY(drawY), .char_color(char_color)); //, .controls({BTNU, BTNL, BTNR, BTND})
+    //char_driver char_drive0(.pixel_clk(pixel_clk), .frame_clk(frame_clk), .rst(!CPU_RESETN), .en(en), .controls({BTND, BTNR, BTNL, BTNU}), .drawX(drawX), .drawY(drawY), .char_color(char_color)); //, .controls({BTNU, BTNL, BTNR, BTND})
     parameter transparent_mask = 12'h000;
-    char_driver char_drive0(.pixel_clk(pixel_clk), .frame_clk(frame_clk), .rst(!CPU_RESETN), .en(en), .controls(keycode), .drawX(drawX), .drawY(drawY), .char_color(char_color)); //, .controls({BTNU, BTNL, BTNR, BTND})
+    char_driver char_drive0(.pixel_clk(pixel_clk), .frame_clk(frame_clk), .rst(!CPU_RESETN), .en(en), .controls({down, right , left, up}), .drawX(drawX), .drawY(drawY), .char_color(char_color)); //, .controls({BTNU, BTNL, BTNR, BTND})
 
 
 
@@ -100,7 +188,7 @@ always_ff @ (posedge pixel_clk) begin
     if(!CPU_RESETN)
         enemy_en <= 0;
     else if (en & !enemy_en)
-        enemy_en <= (BTND||BTNR|| BTNL||BTNU);
+        enemy_en <= (down||right||left||up);
      else if (!en)
         enemy_en <= 0;
      else
@@ -175,8 +263,54 @@ end
 
 assign background = back_rom | {hit_frame,hit_frame,hit_frame,hit_frame, 8'h00};   //Add Redshift
 
+    logic start_timer = 0;
+
+    logic [15:0]time_counter = 0;
+        logic [3:0] time_sec, time_tens, time_hund;
+        always_ff @ (posedge frame_clk or negedge CPU_RESETN) begin
+            if(!CPU_RESETN) begin
+                time_counter <= 0;
+                start_timer <= 0;
+                end else begin
+            if(en && start_timer)
+                time_counter <= time_counter+1;
+            else
+                time_counter <= time_counter;
+            if(left||right||up||down) 
+                start_timer <= 1;
+            else
+                start_timer <= start_timer;
+        end
+            time_sec <= (time_counter/60)%10;
+            time_tens <= (time_counter/600)%10;
+            time_hund <= (time_counter/6000)%10; 
+        
+        
+        end
+        
+   multidigit multi_ins(
+    .clk(hex_clk),              // Connect the clock signal
+    .rst(!CPU_RESETN),          // Reset signal (active low, inverted here)
+    .dig7(4'h0),                // Set digit 7 to 0
+    .dig6(4'h0),                // Set digit 6 to 0
+    .dig5(4'h0),                // Set digit 5 to 0
+    .dig4(4'h0),                // Set digit 4 to 0
+    .dig3(4'h0),           // Map hundreds of seconds to digit 3
+    .dig2(time_hund),           // Map tens of seconds to digit 2
+    .dig1(time_tens),            // Map seconds to digit 1
+    .dig0(time_sec),                // Set digit 0 to 0 as padding
+    .a(CA),                     // Map segment 'a' to CA
+    .b(CB),                     // Map segment 'b' to CB
+    .c(CC),                     // Map segment 'c' to CC
+    .d(CD),                     // Map segment 'd' to CD
+    .e(CE),                     // Map segment 'e' to CE
+    .f(CF),                     // Map segment 'f' to CF
+    .g(CG),                     // Map segment 'g' to CG
+    .an(AN)                     // Map the active-low anode control to AN
+);
 
 
+/////--------------------------------------
 //    logic[11:0] enemy_color0, enemy_color1;
 //    enemy enemy_0(.pixel_clk(pixel_clk), .frame_clk(frame_clk), .rst(!CPU_RESETN), .control(16'hFFFF), .drawX(drawX), .drawY(drawY), .enemy_color(enemy_color0)); 
 //    enemy_flipped enemy_1(.pixel_clk(pixel_clk), .frame_clk(frame_clk), .rst(!CPU_RESETN), .control(16'hFFFF), .drawX(drawX), .drawY(drawY), .enemy_color(enemy_color1)); 
@@ -208,26 +342,7 @@ assign background = back_rom | {hit_frame,hit_frame,hit_frame,hit_frame, 8'h00};
 //    assign foreground = char_color;
 //    assign foreground = enemy_color;
 
-    logic [3:0]keycode;
-    logic valid;
     
-    ps2_keyboard keyboard_controller (
-        .clk(pixel_clk),       // Connect system clock
-        .ps2_clk(PS2_CLK),     // Connect PS/2 clock
-        .ps2_data(PS2_DATA),   // Connect PS/2 data line
-        .action(keycode)       // Output keycode for actions
-    );
-
-
-always_ff @(posedge frame_clk) begin
-   case(keycode)
-       8'h75: background <= 12'hF00; // Up Arrow, Red color
-       8'h72: background <= 12'h0F0; // Down Arrow, Green color
-       8'h6B: background <= 12'h00F; // Left Arrow, Blue color
-       8'h74: background <= 12'hFFF; // Right Arrow, White color
-//        default: background <= 12'hF00; // Default to Black if no key matches
-   endcase
-end
 
 
 endmodule

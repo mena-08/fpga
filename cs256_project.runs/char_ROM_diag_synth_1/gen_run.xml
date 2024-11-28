@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="char_ROM_diag_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1731490147">
+<GenRun Id="char_ROM_diag_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1732445215">
+  <File Type="VDS-TIMING-PB" Name="char_ROM_diag_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="char_ROM_diag_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="char_ROM_diag.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="char_ROM_diag_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="char_ROM_diag_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="char_ROM_diag_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="char_ROM_diag.vds"/>
   <File Type="REPORTS-TCL" Name="char_ROM_diag_reports.tcl"/>
   <File Type="PA-TCL" Name="char_ROM_diag.tcl"/>
-  <File Type="RDS-DCP" Name="char_ROM_diag.dcp"/>
-  <File Type="RDS-RDS" Name="char_ROM_diag.vds"/>
-  <File Type="RDS-UTIL" Name="char_ROM_diag_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="char_ROM_diag_utilization_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/char_ROM_diag">
     <File Path="$PSRCDIR/sources_1/ip/char_ROM_diag/char_ROM_diag.xci">
       <FileInfo>

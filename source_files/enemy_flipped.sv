@@ -32,7 +32,7 @@ module enemy_flipped(
     );
     
     
-    parameter width = 5, length = 40;
+    parameter width = 8, length = 48;
     parameter x_size = length, y_size = width;
     parameter x_start = 640, y_start = 480/8;
 
@@ -43,12 +43,13 @@ module enemy_flipped(
     logic [10:0]random = 0;
     
     logic[9:0]start_in;
-    logic [2:0]speed;
+    logic [3:0]speed;
     logic flip,direction,start=1;
     assign start_in = control[9:0];
 //    assign direction = control[10];
     assign flip = control[10];
-    assign speed = 1+control[12:11]+counter%3;
+    logic flip_reg; //Hold sprite direction
+    assign speed = 3+control[12:11]+counter%3;
 
         logic [9:0]counter=0;
 
@@ -95,6 +96,8 @@ module enemy_flipped(
                         x_vel <= speed;
                     end
                     
+                    flip_reg <= flip;
+                
 //                end else begin
 //                    x_pos <= start_in%480;
 //                    y_size <= width;
@@ -133,7 +136,7 @@ module enemy_flipped(
     // Color and character rendering logic
     parameter transparent_mask = 12'h000;
     logic is_char;
-    logic [7:0] char_addr;
+    logic [8:0] char_addr;
 
     always_comb begin
         // Detect whether the character is currently being drawn.
@@ -143,7 +146,7 @@ module enemy_flipped(
                   ($signed(drawY) < $signed(y_pos + y_size));
                   
         if (is_char) begin
-            if(!flip)    
+            if(!flip_reg)    
                 char_addr = (drawX - x_pos) + x_size * (drawY - y_pos);
             else   
                 char_addr = (x_size - (drawX - x_pos) - 1) + x_size * (drawY - y_pos);

@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/impl_1/project_toplevel.tcl"
+  variable script "/home/menao/Project_Test/fpga/cs256_project.runs/impl_1/project_toplevel.tcl"
   variable category "vivado_impl"
 }
 
@@ -122,7 +122,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 10
+  set_param chipscope.maxJobs 19
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a100tcsg324-1
   set_property board_part digilentinc.com:nexys-a7-100t:part0:1.0 [current_project]
@@ -130,21 +130,21 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.cache/wt [current_project]
-  set_property parent.project_path /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.xpr [current_project]
-  set_property ip_output_repo /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/menao/Project_Test/fpga/cs256_project.cache/wt [current_project]
+  set_property parent.project_path /home/menao/Project_Test/fpga/cs256_project.xpr [current_project]
+  set_property ip_output_repo /home/menao/Project_Test/fpga/cs256_project.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/synth_1/project_toplevel.dcp
-  read_ip -quiet /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-  read_ip -quiet /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/sources_1/ip/char_ROM/char_ROM.xci
-  read_ip -quiet /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/sources_1/ip/char_ROM_diag/char_ROM_diag.xci
-  read_ip -quiet /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
-  read_ip -quiet /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/sources_1/ip/enemy_ROM/enemy_ROM.xci
+  add_files -quiet /home/menao/Project_Test/fpga/cs256_project.runs/synth_1/project_toplevel.dcp
+  read_ip -quiet /home/menao/Project_Test/fpga/cs256_project.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+  read_ip -quiet /home/menao/Project_Test/fpga/cs256_project.srcs/sources_1/ip/char_ROM/char_ROM.xci
+  read_ip -quiet /home/menao/Project_Test/fpga/cs256_project.srcs/sources_1/ip/char_ROM_diag/char_ROM_diag.xci
+  read_ip -quiet /home/menao/Project_Test/fpga/cs256_project.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
+  read_ip -quiet /home/menao/Project_Test/fpga/cs256_project.srcs/sources_1/ip/enemy_ROM/enemy_ROM.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/constrs_1/imports/cs256-fall24/nexys-a7-100t-master.xdc
+  read_xdc /home/menao/Project_Test/fpga/cs256_project.srcs/constrs_1/imports/cs256-fall24/nexys-a7-100t-master.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

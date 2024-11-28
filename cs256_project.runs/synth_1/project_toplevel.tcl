@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/synth_1/project_toplevel.tcl"
+  variable script "/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/project_toplevel.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,7 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 10
+set_param chipscope.maxJobs 19
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -78,50 +78,53 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.cache/wt [current_project]
-set_property parent.project_path /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.xpr [current_project]
+set_property webtalk.parent_dir /home/menao/Project_Test/fpga/cs256_project.cache/wt [current_project]
+set_property parent.project_path /home/menao/Project_Test/fpga/cs256_project.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:nexys-a7-100t:part0:1.0 [current_project]
-set_property ip_output_repo /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.cache/ip [current_project]
+set_property ip_output_repo /home/menao/Project_Test/fpga/cs256_project.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files /home/khogeesa/output_memory.coe
-add_files /home/khogeesa/Desktop/cs256_project/fpga/output_memory.coe
-add_files /home/khogeesa/Desktop/cs256_project/fpga/output_memory2.coe
-add_files /home/khogeesa/Desktop/cs256_project/fpga/source_files/spaceship.coe
-add_files /home/khogeesa/Desktop/cs256_project/fpga/source_files/spaceship2.coe
-add_files /home/khogeesa/Desktop/cs256_project/fpga/source_files/rotated_spaceship.coe
-add_files /home/khogeesa/Desktop/cs256_project/fpga/source_files/back2.coe
-add_files /home/khogeesa/Desktop/cs256_project/fpga/source_files/enemy.coe
+add_files /home/menao/Project_Test/fpga/output_memory.coe
+add_files /home/menao/Project_Test/fpga/output_memory2.coe
+add_files /home/menao/Project_Test/fpga/source_files/spaceship.coe
+add_files /home/menao/Project_Test/fpga/source_files/spaceship2.coe
+add_files /home/menao/Project_Test/fpga/source_files/rotated_spaceship.coe
+add_files /home/menao/Project_Test/fpga/source_files/back2.coe
+add_files /home/menao/Project_Test/fpga/source_files/enemy.coe
+add_files /home/menao/Project_Test/fpga/source_files/enemyv2.coe
 read_verilog -library xil_defaultlib -sv {
-  /home/khogeesa/Desktop/cs256_project/fpga/source_files/char_driver.sv
-  /home/khogeesa/Desktop/cs256_project/fpga/source_files/enemy.sv
-  /home/khogeesa/Desktop/cs256_project/fpga/source_files/enemy_flipped.sv
-  /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/sources_1/imports/source_files/graphics_driver.sv
-  /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/sources_1/imports/source_files/lfsr_random_12bit.sv
-  /home/khogeesa/Desktop/cs256_project/fpga/source_files/ps2_keyboard.sv
-  /home/khogeesa/Desktop/cs256_project/fpga/source_files/vga_controller.sv
-  /home/khogeesa/Desktop/cs256_project/fpga/source_files/project_toplevel.sv
+  /home/menao/Project_Test/fpga/source_files/char_driver.sv
+  /home/menao/Project_Test/fpga/source_files/debouncer.sv
+  /home/menao/Project_Test/fpga/source_files/enemy.sv
+  /home/menao/Project_Test/fpga/source_files/enemy_flipped.sv
+  /home/menao/Project_Test/fpga/cs256_project.srcs/sources_1/imports/source_files/graphics_driver.sv
+  /home/menao/Project_Test/fpga/cs256_project.srcs/sources_1/imports/source_files/lfsr_random_12bit.sv
+  /home/menao/Project_Test/fpga/source_files/multidigit.sv
+  /home/menao/Project_Test/fpga/source_files/ps2_keyboard.sv
+  /home/menao/Project_Test/fpga/source_files/sevenseg.sv
+  /home/menao/Project_Test/fpga/source_files/vga_controller.sv
+  /home/menao/Project_Test/fpga/source_files/project_toplevel.sv
 }
-read_ip -quiet /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+read_ip -quiet /home/menao/Project_Test/fpga/cs256_project.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all /home/menao/Project_Test/fpga/cs256_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/menao/Project_Test/fpga/cs256_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all /home/menao/Project_Test/fpga/cs256_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
-read_ip -quiet /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/sources_1/ip/char_ROM/char_ROM.xci
-set_property used_in_implementation false [get_files -all /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/char_ROM/char_ROM_ooc.xdc]
+read_ip -quiet /home/menao/Project_Test/fpga/cs256_project.srcs/sources_1/ip/char_ROM/char_ROM.xci
+set_property used_in_implementation false [get_files -all /home/menao/Project_Test/fpga/cs256_project.gen/sources_1/ip/char_ROM/char_ROM_ooc.xdc]
 
-read_ip -quiet /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/sources_1/ip/char_ROM_diag/char_ROM_diag.xci
-set_property used_in_implementation false [get_files -all /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/char_ROM_diag/char_ROM_diag_ooc.xdc]
+read_ip -quiet /home/menao/Project_Test/fpga/cs256_project.srcs/sources_1/ip/char_ROM_diag/char_ROM_diag.xci
+set_property used_in_implementation false [get_files -all /home/menao/Project_Test/fpga/cs256_project.gen/sources_1/ip/char_ROM_diag/char_ROM_diag_ooc.xdc]
 
-read_ip -quiet /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
-set_property used_in_implementation false [get_files -all /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]
+read_ip -quiet /home/menao/Project_Test/fpga/cs256_project.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
+set_property used_in_implementation false [get_files -all /home/menao/Project_Test/fpga/cs256_project.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]
 
-read_ip -quiet /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/sources_1/ip/enemy_ROM/enemy_ROM.xci
-set_property used_in_implementation false [get_files -all /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM_ooc.xdc]
+read_ip -quiet /home/menao/Project_Test/fpga/cs256_project.srcs/sources_1/ip/enemy_ROM/enemy_ROM.xci
+set_property used_in_implementation false [get_files -all /home/menao/Project_Test/fpga/cs256_project.gen/sources_1/ip/enemy_ROM/enemy_ROM_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -132,8 +135,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/constrs_1/imports/cs256-fall24/nexys-a7-100t-master.xdc
-set_property used_in_implementation false [get_files /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.srcs/constrs_1/imports/cs256-fall24/nexys-a7-100t-master.xdc]
+read_xdc /home/menao/Project_Test/fpga/cs256_project.srcs/constrs_1/imports/cs256-fall24/nexys-a7-100t-master.xdc
+set_property used_in_implementation false [get_files /home/menao/Project_Test/fpga/cs256_project.srcs/constrs_1/imports/cs256-fall24/nexys-a7-100t-master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

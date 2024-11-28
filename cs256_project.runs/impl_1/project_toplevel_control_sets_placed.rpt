@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Tue Nov 19 15:18:04 2024
-| Host         : rsws09.kaust.edu.sa running 64-bit Ubuntu 22.04.5 LTS
+| Date         : Wed Nov 27 15:07:46 2024
+| Host         : rsws13.kaust.edu.sa running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_control_sets -verbose -file project_toplevel_control_sets_placed.rpt
 | Design       : project_toplevel
 | Device       : xc7a100t
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    65 |
-|    Minimum number of control sets                        |    65 |
+| Total control sets                                       |    39 |
+|    Minimum number of control sets                        |    39 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   367 |
+| Unused register locations in slices containing registers |   166 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    65 |
-| >= 0 to < 4        |    39 |
-| >= 4 to < 6        |    17 |
+| Total control sets |    39 |
+| >= 0 to < 4        |     5 |
+| >= 4 to < 6        |    20 |
 | >= 6 to < 8        |     1 |
 | >= 8 to < 10       |     1 |
 | >= 10 to < 12      |     1 |
-| >= 12 to < 14      |     1 |
+| >= 12 to < 14      |     2 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     5 |
+| >= 16              |     9 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,86 +58,60 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             221 |          118 |
-| No           | No                    | Yes                    |              72 |           51 |
-| No           | Yes                   | No                     |              23 |           16 |
-| Yes          | No                    | No                     |               6 |            4 |
-| Yes          | No                    | Yes                    |             584 |          228 |
-| Yes          | Yes                   | No                     |              15 |            5 |
+| No           | No                    | No                     |             280 |          145 |
+| No           | No                    | Yes                    |              44 |           26 |
+| No           | Yes                   | No                     |              24 |           15 |
+| Yes          | No                    | No                     |              34 |           15 |
+| Yes          | No                    | Yes                    |             600 |          215 |
+| Yes          | Yes                   | No                     |              20 |            8 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+---------------------------------------------------+-------------------------------------+--------------------------------------------------+------------------+----------------+--------------+
-|                    Clock Signal                   |            Enable Signal            |                 Set/Reset Signal                 | Slice Load Count | Bel Load Count | Bels / Slice |
-+---------------------------------------------------+-------------------------------------+--------------------------------------------------+------------------+----------------+--------------+
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/keycode_reg[5]_LDC_i_2_n_0   |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/bit_count_reg[0]_LDC_i_1_n_0 |                1 |              1 |         1.00 |
-|  keyboard_controller/bit_count_reg[1]_LDC_i_1_n_0 |                                     | keyboard_controller/bit_count_reg[1]_LDC_i_2_n_0 |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/bit_count_reg[1]_LDC_i_2_n_0 |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/keycode_reg[4]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/keycode_reg[4]_LDC_i_2_n_0   |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/bit_count_reg[3]_LDC_i_2_n_0 |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/bit_count_reg[3]_LDC_i_1_n_0 |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/bit_count_reg[2]_LDC_i_2_n_0 |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/keycode_reg[0]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/keycode_reg[1]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/keycode_reg[2]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/keycode_reg[1]_LDC_i_2_n_0   |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/keycode_reg[2]_LDC_i_2_n_0   |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/keycode_reg[5]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/bit_count_reg[0]_LDC_i_2_n_0 |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/keycode_reg[6]_LDC_i_2_n_0   |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/keycode_reg[6]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/keycode_reg[7]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/keycode_reg[7]_LDC_i_2_n_0   |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/keycode_reg[3]_LDC_i_2_n_0   |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/keycode_reg[3]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
-|  keyboard_controller/bit_count_reg[3]_LDC_i_1_n_0 |                                     | keyboard_controller/bit_count_reg[3]_LDC_i_2_n_0 |                1 |              1 |         1.00 |
-|  keyboard_controller/keycode_reg[0]_LDC_i_1_n_0   |                                     | keyboard_controller/keycode_reg[0]_LDC_i_2_n_0   |                1 |              1 |         1.00 |
-|  keyboard_controller/keycode_reg[1]_LDC_i_1_n_0   |                                     | keyboard_controller/keycode_reg[1]_LDC_i_2_n_0   |                1 |              1 |         1.00 |
-|  keyboard_controller/keycode_reg[2]_LDC_i_1_n_0   |                                     | keyboard_controller/keycode_reg[2]_LDC_i_2_n_0   |                1 |              1 |         1.00 |
-|  keyboard_controller/keycode_reg[5]_LDC_i_1_n_0   |                                     | keyboard_controller/keycode_reg[5]_LDC_i_2_n_0   |                1 |              1 |         1.00 |
-|  keyboard_controller/keycode_reg[6]_LDC_i_1_n_0   |                                     | keyboard_controller/keycode_reg[6]_LDC_i_2_n_0   |                1 |              1 |         1.00 |
-|  keyboard_controller/keycode_reg[7]_LDC_i_1_n_0   |                                     | keyboard_controller/keycode_reg[7]_LDC_i_2_n_0   |                1 |              1 |         1.00 |
-|  keyboard_controller/keycode_reg[3]_LDC_i_1_n_0   |                                     | keyboard_controller/keycode_reg[3]_LDC_i_2_n_0   |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/bit_count_reg[1]_LDC_i_1_n_0 |                1 |              1 |         1.00 |
-|  keyboard_controller/bit_count_reg[2]_LDC_i_1_n_0 |                                     | keyboard_controller/bit_count_reg[2]_LDC_i_2_n_0 |                1 |              1 |         1.00 |
-|  keyboard_controller/bit_count_reg[0]_LDC_i_1_n_0 |                                     | keyboard_controller/bit_count_reg[0]_LDC_i_2_n_0 |                1 |              1 |         1.00 |
-|  keyboard_controller/keycode_reg[4]_LDC_i_1_n_0   |                                     | keyboard_controller/keycode_reg[4]_LDC_i_2_n_0   |                1 |              1 |         1.00 |
-|  char_drive0/is_char                              |                                     |                                                  |                1 |              1 |         1.00 |
-|  VGA_VS_OBUF_BUFG                                 |                                     |                                                  |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/bit_count_reg[2]_LDC_i_1_n_0 |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/keycode_reg[0]_LDC_i_2_n_0   |                1 |              1 |         1.00 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/key_release_i_1_n_0          |                1 |              1 |         1.00 |
-|  VGA_VS_OBUF_BUFG                                 | enemies[2].enemy_flipped_inst/x_vel | enemies[7].enemy_inst/CPU_RESETN                 |                2 |              4 |         2.00 |
-|  VGA_VS_OBUF_BUFG                                 | enemies[6].enemy_flipped_inst/x_vel | enemies[7].enemy_inst/CPU_RESETN                 |                2 |              4 |         2.00 |
-|  VGA_VS_OBUF_BUFG                                 | enemies[4].enemy_inst/y_vel         | enemies[7].enemy_inst/CPU_RESETN                 |                3 |              4 |         1.33 |
-|  instance_name/inst/clk_out1                      | keyboard_controller/key_valid       | keyboard_controller/key_release                  |                1 |              4 |         4.00 |
-|  VGA_VS_OBUF_BUFG                                 | enemies[2].enemy_inst/y_vel         | enemies[7].enemy_inst/CPU_RESETN                 |                2 |              4 |         2.00 |
-|  VGA_VS_OBUF_BUFG                                 | enemies[5].enemy_flipped_inst/x_vel | enemies[7].enemy_inst/CPU_RESETN                 |                2 |              4 |         2.00 |
-|  VGA_VS_OBUF_BUFG                                 | enemies[1].enemy_inst/y_vel         | enemies[7].enemy_inst/CPU_RESETN                 |                3 |              4 |         1.33 |
-|  VGA_VS_OBUF_BUFG                                 | enemies[7].enemy_inst/y_vel         | enemies[7].enemy_inst/CPU_RESETN                 |                4 |              4 |         1.00 |
-|  VGA_VS_OBUF_BUFG                                 | enemies[3].enemy_flipped_inst/x_vel | enemies[7].enemy_inst/CPU_RESETN                 |                2 |              4 |         2.00 |
-|  VGA_VS_OBUF_BUFG                                 | enemies[0].enemy_flipped_inst/x_vel | enemies[7].enemy_inst/CPU_RESETN                 |                3 |              4 |         1.33 |
-|  VGA_VS_OBUF_BUFG                                 | enemies[1].enemy_flipped_inst/x_vel | enemies[7].enemy_inst/CPU_RESETN                 |                2 |              4 |         2.00 |
-|  VGA_VS_OBUF_BUFG                                 | enemies[6].enemy_inst/y_vel         | enemies[7].enemy_inst/CPU_RESETN                 |                1 |              4 |         4.00 |
-|  VGA_VS_OBUF_BUFG                                 | enemies[4].enemy_flipped_inst/x_vel | enemies[7].enemy_inst/CPU_RESETN                 |                2 |              4 |         2.00 |
-|  VGA_VS_OBUF_BUFG                                 | enemies[7].enemy_flipped_inst/x_vel | enemies[7].enemy_inst/CPU_RESETN                 |                3 |              4 |         1.33 |
-|  VGA_VS_OBUF_BUFG                                 | enemies[0].enemy_inst/y_vel         | enemies[7].enemy_inst/CPU_RESETN                 |                3 |              4 |         1.33 |
-|  VGA_VS_OBUF_BUFG                                 | enemies[3].enemy_inst/y_vel         | enemies[7].enemy_inst/CPU_RESETN                 |                3 |              4 |         1.33 |
-|  VGA_VS_OBUF_BUFG                                 | enemies[5].enemy_inst/y_vel         | enemies[7].enemy_inst/CPU_RESETN                 |                2 |              4 |         2.00 |
-|  VGA_VS_OBUF_BUFG                                 | char_drive0/x_vel[3]_i_1__7_n_0     |                                                  |                4 |              6 |         1.50 |
-|  instance_name/inst/clk_out1                      |                                     | keyboard_controller/shift_reg[8]_i_1_n_0         |                4 |              8 |         2.00 |
-|  instance_name/inst/clk_out1                      | vga_controller_0/vc                 | enemies[7].enemy_inst/CPU_RESETN                 |                4 |             11 |         2.75 |
-|  instance_name/inst/clk_out1                      | prbs/load                           | enemies[7].enemy_inst/CPU_RESETN                 |                4 |             12 |         3.00 |
-|  VGA_VS_OBUF_BUFG                                 |                                     | enemies[7].enemy_inst/CPU_RESETN                 |               16 |             16 |         1.00 |
-|  VGA_VS_OBUF_BUFG                                 | char_drive0/en                      | enemies[7].enemy_inst/CPU_RESETN                 |                4 |             20 |         5.00 |
-|  instance_name/inst/clk_out1                      |                                     | enemies[7].enemy_inst/CPU_RESETN                 |               10 |             34 |         3.40 |
-|  instance_name/inst/clk_out1                      |                                     |                                                  |              116 |            219 |         1.89 |
-|  VGA_VS_OBUF_BUFG                                 | enemy_en                            | enemies[7].enemy_inst/CPU_RESETN                 |              181 |            488 |         2.70 |
-+---------------------------------------------------+-------------------------------------+--------------------------------------------------+------------------+----------------+--------------+
++------------------------------+-------------------------------------+----------------------------------+------------------+----------------+--------------+
+|         Clock Signal         |            Enable Signal            |         Set/Reset Signal         | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------------------+-------------------------------------+----------------------------------+------------------+----------------+--------------+
+|  char_drive0/is_char         |                                     |                                  |                1 |              1 |         1.00 |
+|  CLK50MHZ                    | keyboard/debounce/O01_out           |                                  |                1 |              1 |         1.00 |
+|  CLK50MHZ                    | keyboard/debounce/clear             |                                  |                1 |              1 |         1.00 |
+|  CLK50MHZ                    | keyboard/debounce/O10_out           |                                  |                1 |              1 |         1.00 |
+|  CLK50MHZ                    | keyboard/debounce/Iv1_i_1_n_0       |                                  |                1 |              1 |         1.00 |
+|  VGA_VS_OBUF_BUFG            | enemies[0].enemy_inst/y_vel         | enemies[0].enemy_inst/CPU_RESETN |                3 |              4 |         1.33 |
+|  VGA_VS_OBUF_BUFG            | enemies[1].enemy_flipped_inst/x_vel | enemies[0].enemy_inst/CPU_RESETN |                3 |              4 |         1.33 |
+|  VGA_VS_OBUF_BUFG            | enemies[0].enemy_flipped_inst/x_vel | enemies[0].enemy_inst/CPU_RESETN |                1 |              4 |         4.00 |
+|  VGA_VS_OBUF_BUFG            | enemies[2].enemy_flipped_inst/x_vel | enemies[0].enemy_inst/CPU_RESETN |                2 |              4 |         2.00 |
+|  VGA_VS_OBUF_BUFG            | enemies[5].enemy_flipped_inst/x_vel | enemies[0].enemy_inst/CPU_RESETN |                1 |              4 |         4.00 |
+|  VGA_VS_OBUF_BUFG            | enemies[7].enemy_inst/y_vel         | enemies[0].enemy_inst/CPU_RESETN |                2 |              4 |         2.00 |
+|  VGA_VS_OBUF_BUFG            | enemies[5].enemy_inst/y_vel         | enemies[0].enemy_inst/CPU_RESETN |                2 |              4 |         2.00 |
+|  VGA_VS_OBUF_BUFG            | enemies[3].enemy_flipped_inst/x_vel | enemies[0].enemy_inst/CPU_RESETN |                2 |              4 |         2.00 |
+|  VGA_VS_OBUF_BUFG            | enemies[4].enemy_inst/y_vel         | enemies[0].enemy_inst/CPU_RESETN |                2 |              4 |         2.00 |
+|  VGA_VS_OBUF_BUFG            | enemies[3].enemy_inst/y_vel         | enemies[0].enemy_inst/CPU_RESETN |                2 |              4 |         2.00 |
+|  VGA_VS_OBUF_BUFG            | enemies[4].enemy_flipped_inst/x_vel | enemies[0].enemy_inst/CPU_RESETN |                3 |              4 |         1.33 |
+|  VGA_VS_OBUF_BUFG            | enemies[1].enemy_inst/y_vel         | enemies[0].enemy_inst/CPU_RESETN |                2 |              4 |         2.00 |
+|  VGA_VS_OBUF_BUFG            | enemies[6].enemy_flipped_inst/x_vel | enemies[0].enemy_inst/CPU_RESETN |                1 |              4 |         4.00 |
+|  VGA_VS_OBUF_BUFG            | enemies[6].enemy_inst/y_vel         | enemies[0].enemy_inst/CPU_RESETN |                2 |              4 |         2.00 |
+|  CLK100MHZ_IBUF              |                                     | enemies[0].enemy_inst/CPU_RESETN |                4 |              4 |         1.00 |
+|  VGA_VS_OBUF_BUFG            | enemies[2].enemy_inst/y_vel         | enemies[0].enemy_inst/CPU_RESETN |                2 |              4 |         2.00 |
+|  VGA_VS_OBUF_BUFG            | enemies[7].enemy_flipped_inst/x_vel | enemies[0].enemy_inst/CPU_RESETN |                2 |              4 |         2.00 |
+| ~keyboard/debounce/O0        | keyboard/cnt                        | keyboard/cnt[3]_i_1_n_0          |                1 |              4 |         4.00 |
+|  CLK50MHZ                    | keyboard/debounce/cnt1[4]_i_1_n_0   | keyboard/debounce/Iv1_i_1_n_0    |                1 |              5 |         5.00 |
+|  CLK50MHZ                    |                                     |                                  |                2 |              5 |         2.50 |
+|  VGA_VS_OBUF_BUFG            | char_drive0/x_vel[3]_i_1__7_n_0     |                                  |                5 |              6 |         1.20 |
+| ~keyboard/debounce/O0        |                                     |                                  |                3 |              9 |         3.00 |
+|  instance_name/inst/clk_out1 | vga_controller_0/vc                 | enemies[0].enemy_inst/CPU_RESETN |                6 |             11 |         1.83 |
+|  instance_name/inst/clk_out1 | prbs/load                           | enemies[0].enemy_inst/CPU_RESETN |                3 |             12 |         4.00 |
+|  hex_clk                     |                                     | enemies[0].enemy_inst/CPU_RESETN |                9 |             13 |         1.44 |
+|  VGA_VS_OBUF_BUFG            | time_counter0                       | enemies[0].enemy_inst/CPU_RESETN |                4 |             16 |         4.00 |
+|  VGA_VS_OBUF_BUFG            |                                     | enemies[0].enemy_inst/CPU_RESETN |               17 |             17 |         1.00 |
+|  CLK100MHZ_IBUF              |                                     |                                  |                6 |             18 |         3.00 |
+|  VGA_VS_OBUF_BUFG            | char_drive0/en                      | enemies[0].enemy_inst/CPU_RESETN |                5 |             20 |         4.00 |
+|  keyboard/flag               | keyboard/dataprev[7]_i_1_n_0        |                                  |                6 |             24 |         4.00 |
+|  VGA_VS_OBUF_BUFG            |                                     |                                  |               27 |             29 |         1.07 |
+|  instance_name/inst/clk_out1 |                                     | enemies[0].enemy_inst/CPU_RESETN |               11 |             34 |         3.09 |
+|  instance_name/inst/clk_out1 |                                     |                                  |              106 |            218 |         2.06 |
+|  VGA_VS_OBUF_BUFG            | enemy_en                            | enemies[0].enemy_inst/CPU_RESETN |              171 |            488 |         2.85 |
++------------------------------+-------------------------------------+----------------------------------+------------------+----------------+--------------+
 
 

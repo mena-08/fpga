@@ -3,54 +3,91 @@
 // Module Name: ps2_keyboard
 // Description: PS/2 keyboard decoder with action mapping for arrow keys.
 //////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+// Company: Digilent Inc.
+// Engineer: Thomas Kappenman
+// 
+// Create Date: 03/03/2015 09:33:36 PM
+// Design Name: 
+// Module Name: PS2Receiver
+// Project Name: Nexys4DDR Keyboard Demo
+// Target Devices: Nexys4DDR
+// Tool Versions: 
+// Description: PS2 Receiver module used to shift in keycodes from a keyboard plugged into the PS2 port
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
 
-module ps2_keyboard(
-    input wire clk,             // System clock
-    input wire ps2_data,        // PS/2 data line
-    input wire ps2_clk,         // PS/2 clock line
-    output reg [3:0] action     // Output action (e.g., move directions)
+module PS2Receiver(
+    input logic clk,             // System clock
+    input logic kclk,            // Keyboard clock
+    input logic kdata,           // Keyboard data
+    output logic [31:0] keycodeout // Output keycode
 );
 
-    reg [10:0] shift_reg = 0;    // Shift register to capture PS/2 frame
-    reg [3:0] bit_count = 0;     // Bit counter
-    reg key_valid = 0;           // High when a valid key is received
-    reg key_release = 0;         // High when a key release event occurs
-    reg [7:0] keycode = 0;       // Current keycode being processed
+    // Internal signals
+    logic kclkf, kdataf;         // Debounced signals
+    logic [7:0] datacur;         // Current data byte
+    logic [7:0] dataprev;        // Previous data byte
+    logic [3:0] cnt;             // Counter for bit position
+    logic [31:0] keycode;        // Internal keycode register
+    logic flag;                  // Flag indicating keycode update
 
-    always @(negedge ps2_clk or posedge clk) begin
-        if (ps2_clk == 1'b0) begin
-            // Shift data into the register
-            shift_reg <= {ps2_data, shift_reg[10:1]};
-            bit_count <= bit_count + 1;
-            
-            // Process frame when 11 bits are received
-            if (bit_count == 11) begin
-                bit_count <= 0; // Reset bit counter
-                
-                // Handle special codes
-                if (shift_reg[8:1] == 8'hF0) begin
-                    key_release <= 1'b1; // Release code
-                end else begin
-                    keycode <= shift_reg[8:1]; // Extract keycode
-                    key_valid <= 1'b1;
-                end
-            end
+    // Initialize internal registers
+    initial begin
+        keycode <= 32'h00000000;
+        cnt <= 4'b0000;
+        flag <= 1'b0;
+    end
+
+    // Instantiate the debouncer module
+    debouncer debounce(
+        .clk(clk),
+        .I0(kclk),
+        .I1(kdata),
+        .O0(kclkf),
+        .O1(kdataf)
+    );
+
+    // Shift in keycode bits on the falling edge of the debounced keyboard clock
+    always_ff @(negedge kclkf) begin
+        case (cnt)
+            0: ; // Start bit
+            1: datacur[0] <= kdataf;
+            2: datacur[1] <= kdataf;
+            3: datacur[2] <= kdataf;
+            4: datacur[3] <= kdataf;
+            5: datacur[4] <= kdataf;
+            6: datacur[5] <= kdataf;
+            7: datacur[6] <= kdataf;
+            8: datacur[7] <= kdataf;
+            9: flag <= 1'b1; // Keycode fully received
+            10: flag <= 1'b0; // Reset flag
+        endcase
+
+        if (cnt <= 9) 
+            cnt <= cnt + 1;
+        else if (cnt == 10) 
+            cnt <= 0;
+    end
+
+    // Update the keycode register on the rising edge of the flag
+    always_ff @(posedge flag) begin
+        if (dataprev != datacur) begin
+            keycode[31:24] <= keycode[23:16];
+            keycode[23:16] <= keycode[15:8];
+            keycode[15:8] <= dataprev;
+            keycode[7:0] <= datacur;
+            dataprev <= datacur;
         end
     end
 
-    // Map keycodes to actions
-    always @(posedge clk) begin
-        if (key_valid && !key_release) begin
-            case (keycode)
-                8'h75: action <= 4'b0001; // Up Arrow
-                8'h72: action <= 4'b0010; // Down Arrow
-                8'h6B: action <= 4'b0100; // Left Arrow
-                8'h74: action <= 4'b1000; // Right Arrow
-                default: action <= 4'b0000; // No action
-            endcase
-        end else if (key_release) begin
-            action <= 4'b0000; // Reset action on key release
-            key_valid <= 1'b0; // Clear valid flag
-        end
-    end
+    // Assign the output
+    assign keycodeout = keycode;
+
 endmodule

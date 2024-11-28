@@ -32,7 +32,7 @@ module enemy(
     );
     
     
-    parameter width = 5, length = 40;
+    parameter width = 8, length = 48;
     parameter x_size = width, y_size = length;
     parameter x_start = 640 / 8, y_start = 480;
 
@@ -43,14 +43,14 @@ module enemy(
     logic [10:0]random = 0;
     
     logic[9:0]start_in;
-    logic [2:0]speed;
+    logic [3:0]speed;
     logic flip,direction,start=1;
     assign start_in = control[9:0];
 //    assign direction = control[10];
     assign flip = control[10];
-    assign speed = 1+control[12:11]+counter%3;
+    logic flip_reg; //Hold sprite direction
+    assign speed = 3+control[12:11]+counter%3;
 
-    
     //    Movement Controls
     logic [9:0]counter=0;
     always_ff @ (posedge frame_clk or posedge rst) begin
@@ -93,6 +93,8 @@ module enemy(
                         y_vel <= speed;
                     end
                     
+                    flip_reg <= flip;
+                    
 //                end else begin
 //                    x_pos <= start_in%480;
 //                    y_size <= width;
@@ -131,7 +133,7 @@ module enemy(
     // Color and character rendering logic
     parameter transparent_mask = 12'h000;
     logic is_char;
-    logic [7:0] char_addr;
+    logic [8:0] char_addr;
 
     always_comb begin
         // Detect whether the character is currently being drawn.
@@ -141,10 +143,10 @@ module enemy(
                   ($signed(drawY) < $signed(y_pos + y_size));
                   
         if (is_char) begin
-            if(!flip)    
+            if(!flip_reg)    
                 char_addr = (drawY - y_pos) + y_size * (x_size - (drawX - x_pos) - 1); // Rotated 90° clockwise
             else   
-                char_addr = (x_size - (drawX - x_pos) - 1) + x_size * (y_size - (drawY - y_pos) - 1);// Rotated and mirrored
+                char_addr = (y_size - (drawY - y_pos) - 1) + y_size * (x_size - (drawX - x_pos) - 1);
         end else
             char_addr = 0;  // Transparent when not visible
             

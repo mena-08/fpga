@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/enemy_ROM_synth_1'
+HD_PWD='/home/menao/Project_Test/fpga/cs256_project.runs/enemy_ROM_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -16,11 +16,11 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 3678072
+INFO: [Synth 8-7075] Helper process launched with PID 2374235
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:20 . Memory (MB): peak = 2380.887 ; gain = 0.000 ; free physical = 476925 ; free virtual = 497506
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:23 . Memory (MB): peak = 2389.789 ; gain = 0.000 ; free physical = 999488 ; free virtual = 1014119
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'char_ROM' [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/char_ROM/synth/char_ROM.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'char_ROM' [/home/menao/Project_Test/fpga/cs256_project.gen/sources_1/ip/char_ROM/synth/char_ROM.vhd:67]
 	Parameter C_FAMILY bound to: artix7 - type: string 
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
 	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
@@ -96,57 +96,57 @@ INFO: [Synth 8-638] synthesizing module 'char_ROM' [/home/khogeesa/Desktop/cs256
 	Parameter C_COUNT_36K_BRAM bound to: 0 - type: string 
 	Parameter C_COUNT_18K_BRAM bound to: 1 - type: string 
 	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     1.2716 mW - type: string 
-INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_4' declared at '/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/char_ROM/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_4' [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/char_ROM/synth/char_ROM.vhd:230]
-INFO: [Synth 8-256] done synthesizing module 'char_ROM' (9#1) [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/char_ROM/synth/char_ROM.vhd:67]
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_4' declared at '/home/menao/Project_Test/fpga/cs256_project.gen/sources_1/ip/char_ROM/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_4' [/home/menao/Project_Test/fpga/cs256_project.gen/sources_1/ip/char_ROM/synth/char_ROM.vhd:230]
+INFO: [Synth 8-256] done synthesizing module 'char_ROM' (9#1) [/home/menao/Project_Test/fpga/cs256_project.gen/sources_1/ip/char_ROM/synth/char_ROM.vhd:67]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:23 ; elapsed = 00:00:46 . Memory (MB): peak = 2576.293 ; gain = 195.406 ; free physical = 477006 ; free virtual = 497588
+Finished RTL Elaboration : Time (s): cpu = 00:00:22 ; elapsed = 00:00:51 . Memory (MB): peak = 2576.195 ; gain = 186.406 ; free physical = 999151 ; free virtual = 1013788
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:47 . Memory (MB): peak = 2576.293 ; gain = 195.406 ; free physical = 477016 ; free virtual = 497599
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:51 . Memory (MB): peak = 2576.195 ; gain = 186.406 ; free physical = 999112 ; free virtual = 1013748
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:47 . Memory (MB): peak = 2576.293 ; gain = 195.406 ; free physical = 477018 ; free virtual = 497601
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:51 . Memory (MB): peak = 2576.195 ; gain = 186.406 ; free physical = 999110 ; free virtual = 1013747
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2576.293 ; gain = 0.000 ; free physical = 476991 ; free virtual = 497573
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2576.195 ; gain = 0.000 ; free physical = 999136 ; free virtual = 1013773
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/char_ROM/char_ROM_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/char_ROM/char_ROM_ooc.xdc] for cell 'U0'
-Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/char_ROM_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/char_ROM_synth_1/dont_touch.xdc]
+Parsing XDC File [/home/menao/Project_Test/fpga/cs256_project.gen/sources_1/ip/char_ROM/char_ROM_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/menao/Project_Test/fpga/cs256_project.gen/sources_1/ip/char_ROM/char_ROM_ooc.xdc] for cell 'U0'
+Parsing XDC File [/home/menao/Project_Test/fpga/cs256_project.runs/char_ROM_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/menao/Project_Test/fpga/cs256_project.runs/char_ROM_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2640.324 ; gain = 0.000 ; free physical = 476918 ; free virtual = 497500
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2640.227 ; gain = 0.000 ; free physical = 999087 ; free virtual = 1013729
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2640.324 ; gain = 0.000 ; free physical = 476907 ; free virtual = 497489
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2640.227 ; gain = 0.000 ; free physical = 999074 ; free virtual = 1013713
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:55 . Memory (MB): peak = 2640.324 ; gain = 259.438 ; free physical = 476952 ; free virtual = 497537
+Finished Constraint Validation : Time (s): cpu = 00:00:28 ; elapsed = 00:00:59 . Memory (MB): peak = 2640.227 ; gain = 250.438 ; free physical = 999037 ; free virtual = 1013675
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:55 . Memory (MB): peak = 2640.324 ; gain = 259.438 ; free physical = 476958 ; free virtual = 497542
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:28 ; elapsed = 00:00:59 . Memory (MB): peak = 2640.227 ; gain = 250.438 ; free physical = 999036 ; free virtual = 1013674
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/char_ROM_synth_1/dont_touch.xdc, line 9).
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  /home/menao/Project_Test/fpga/cs256_project.runs/char_ROM_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:55 . Memory (MB): peak = 2640.324 ; gain = 259.438 ; free physical = 476940 ; free virtual = 497522
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:59 . Memory (MB): peak = 2640.227 ; gain = 250.438 ; free physical = 999026 ; free virtual = 1013664
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:00:55 . Memory (MB): peak = 2640.324 ; gain = 259.438 ; free physical = 476929 ; free virtual = 497512
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:59 . Memory (MB): peak = 2640.227 ; gain = 250.438 ; free physical = 999012 ; free virtual = 1013647
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -168,25 +168,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:56 . Memory (MB): peak = 2640.324 ; gain = 259.438 ; free physical = 476948 ; free virtual = 497530
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:01:00 . Memory (MB): peak = 2640.227 ; gain = 250.438 ; free physical = 998996 ; free virtual = 1013630
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:01:02 . Memory (MB): peak = 2640.324 ; gain = 259.438 ; free physical = 476840 ; free virtual = 497423
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:01:05 . Memory (MB): peak = 2640.227 ; gain = 250.438 ; free physical = 999086 ; free virtual = 1013724
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:01:02 . Memory (MB): peak = 2640.324 ; gain = 259.438 ; free physical = 476834 ; free virtual = 497416
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:01:05 . Memory (MB): peak = 2640.227 ; gain = 250.438 ; free physical = 999076 ; free virtual = 1013714
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:01:02 . Memory (MB): peak = 2640.324 ; gain = 259.438 ; free physical = 476829 ; free virtual = 497412
+Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:01:05 . Memory (MB): peak = 2640.227 ; gain = 250.438 ; free physical = 999077 ; free virtual = 1013714
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -204,37 +204,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:01:04 . Memory (MB): peak = 2640.324 ; gain = 259.438 ; free physical = 476810 ; free virtual = 497393
+Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:01:08 . Memory (MB): peak = 2640.227 ; gain = 250.438 ; free physical = 999556 ; free virtual = 1014193
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:01:04 . Memory (MB): peak = 2640.324 ; gain = 259.438 ; free physical = 476809 ; free virtual = 497392
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:01:08 . Memory (MB): peak = 2640.227 ; gain = 250.438 ; free physical = 999556 ; free virtual = 1014193
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:01:04 . Memory (MB): peak = 2640.324 ; gain = 259.438 ; free physical = 476817 ; free virtual = 497400
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:01:08 . Memory (MB): peak = 2640.227 ; gain = 250.438 ; free physical = 999555 ; free virtual = 1014192
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:01:04 . Memory (MB): peak = 2640.324 ; gain = 259.438 ; free physical = 476817 ; free virtual = 497400
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:01:08 . Memory (MB): peak = 2640.227 ; gain = 250.438 ; free physical = 999554 ; free virtual = 1014191
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:01:04 . Memory (MB): peak = 2640.324 ; gain = 259.438 ; free physical = 476817 ; free virtual = 497400
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:01:08 . Memory (MB): peak = 2640.227 ; gain = 250.438 ; free physical = 999553 ; free virtual = 1014190
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:39 ; elapsed = 00:01:04 . Memory (MB): peak = 2640.324 ; gain = 259.438 ; free physical = 476813 ; free virtual = 497396
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:01:08 . Memory (MB): peak = 2640.227 ; gain = 250.438 ; free physical = 999553 ; free virtual = 1014190
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -253,30 +253,30 @@ Report Cell Usage:
 |1     |RAMB18E1 |     1|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:39 ; elapsed = 00:01:04 . Memory (MB): peak = 2640.324 ; gain = 259.438 ; free physical = 476806 ; free virtual = 497389
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:01:08 . Memory (MB): peak = 2640.227 ; gain = 250.438 ; free physical = 999558 ; free virtual = 1014195
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:01:02 . Memory (MB): peak = 2640.324 ; gain = 195.406 ; free physical = 476877 ; free virtual = 497460
-Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:01:05 . Memory (MB): peak = 2640.324 ; gain = 259.438 ; free physical = 476874 ; free virtual = 497457
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:01:05 . Memory (MB): peak = 2640.227 ; gain = 186.406 ; free physical = 999605 ; free virtual = 1014242
+Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:01:08 . Memory (MB): peak = 2640.227 ; gain = 250.438 ; free physical = 999600 ; free virtual = 1014236
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2640.324 ; gain = 0.000 ; free physical = 476871 ; free virtual = 497454
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2640.227 ; gain = 0.000 ; free physical = 999615 ; free virtual = 1014252
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2640.324 ; gain = 0.000 ; free physical = 476912 ; free virtual = 497495
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2640.227 ; gain = 0.000 ; free physical = 999635 ; free virtual = 1014272
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 19 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:01:11 . Memory (MB): peak = 2640.324 ; gain = 259.438 ; free physical = 477029 ; free virtual = 497612
-WARNING: [Runs 36-115] Could not delete directory '/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/char_ROM_synth_1/.Xil/Vivado-3676501-rsws08.kaust.edu.sa/dcp0'.
-INFO: [Common 17-1381] The checkpoint '/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/char_ROM_synth_1/char_ROM.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:01:14 . Memory (MB): peak = 2640.227 ; gain = 250.438 ; free physical = 999755 ; free virtual = 1014391
+WARNING: [Runs 36-115] Could not delete directory '/home/menao/Project_Test/fpga/cs256_project.runs/char_ROM_synth_1/.Xil/Vivado-2372743-rsws13.kaust.edu.sa/dcp0'.
+INFO: [Common 17-1381] The checkpoint '/home/menao/Project_Test/fpga/cs256_project.runs/char_ROM_synth_1/char_ROM.dcp' has been generated.
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
 INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP char_ROM, cache-ID = 5d5fca5dd2ddac01
 INFO: [Coretcl 2-1174] Renamed 6 cell refs.
-INFO: [Common 17-1381] The checkpoint '/home/khogeesa/Desktop/cs256_project/fpga/cs256_project.runs/char_ROM_synth_1/char_ROM.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/home/menao/Project_Test/fpga/cs256_project.runs/char_ROM_synth_1/char_ROM.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file char_ROM_utilization_synth.rpt -pb char_ROM_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Nov  6 18:09:55 2024...
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 24 13:48:59 2024...

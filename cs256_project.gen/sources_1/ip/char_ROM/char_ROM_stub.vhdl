@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Wed Nov  6 18:09:54 2024
--- Host        : rsws08.kaust.edu.sa running 64-bit Ubuntu 22.04.5 LTS
+-- Date        : Sun Nov 24 13:48:59 2024
+-- Host        : rsws13.kaust.edu.sa running 64-bit Ubuntu 22.04.5 LTS
 -- Command     : write_vhdl -force -mode synth_stub
---               /home/khogeesa/Desktop/cs256_project/fpga/cs256_project.gen/sources_1/ip/char_ROM/char_ROM_stub.vhdl
+--               /home/menao/Project_Test/fpga/cs256_project.gen/sources_1/ip/char_ROM/char_ROM_stub.vhdl
 -- Design      : char_ROM
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tcsg324-1
