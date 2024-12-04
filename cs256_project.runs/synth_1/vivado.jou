@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Wed Nov 27 15:04:22 2024
-# Process ID: 3793941
+# Start of session at: Thu Dec  5 01:12:41 2024
+# Process ID: 2331071
 # Current directory: /home/menao/Project_Test/fpga/cs256_project.runs/synth_1
 # Command line: vivado -log project_toplevel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source project_toplevel.tcl
 # Log file: /home/menao/Project_Test/fpga/cs256_project.runs/synth_1/project_toplevel.vds

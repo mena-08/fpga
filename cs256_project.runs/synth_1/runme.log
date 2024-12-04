@@ -16,17 +16,17 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 3795562
-WARNING: [Synth 8-6901] identifier 'counter' is used before its declaration [/home/menao/Project_Test/fpga/source_files/enemy.sv:52]
-WARNING: [Synth 8-6901] identifier 'counter' is used before its declaration [/home/menao/Project_Test/fpga/source_files/enemy_flipped.sv:52]
-WARNING: [Synth 8-992] en is already implicitly declared earlier [/home/menao/Project_Test/fpga/source_files/project_toplevel.sv:183]
-WARNING: [Synth 8-6901] identifier 'hit' is used before its declaration [/home/menao/Project_Test/fpga/source_files/project_toplevel.sv:184]
+INFO: [Synth 8-7075] Helper process launched with PID 2332230
+WARNING: [Synth 8-6901] identifier 'counter' is used before its declaration [/home/menao/Project_Test/fpga/source_files/enemy_flipped.sv:50]
+WARNING: [Synth 8-6901] identifier 'counter' is used before its declaration [/home/menao/Project_Test/fpga/source_files/enemy_flipped.sv:172]
+WARNING: [Synth 8-992] en is already implicitly declared earlier [/home/menao/Project_Test/fpga/source_files/project_toplevel.sv:177]
+WARNING: [Synth 8-6901] identifier 'hit' is used before its declaration [/home/menao/Project_Test/fpga/source_files/project_toplevel.sv:178]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 2374.945 ; gain = 0.000 ; free physical = 994046 ; free virtual = 1009722
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 2380.820 ; gain = 0.000 ; free physical = 1000011 ; free virtual = 1022076
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'project_toplevel' [/home/menao/Project_Test/fpga/source_files/project_toplevel.sv:23]
 	Parameter transparent_mask bound to: 12'b000000000000 
-INFO: [Synth 8-6157] synthesizing module 'enemy' [/home/menao/Project_Test/fpga/source_files/enemy.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'enemy' [/home/menao/Project_Test/fpga/source_files/enemy_flipped.sv:23]
 	Parameter width bound to: 8 - type: integer 
 	Parameter length bound to: 48 - type: integer 
 	Parameter x_size bound to: 8 - type: integer 
@@ -34,10 +34,10 @@ INFO: [Synth 8-6157] synthesizing module 'enemy' [/home/menao/Project_Test/fpga/
 	Parameter x_start bound to: 80 - type: integer 
 	Parameter y_start bound to: 480 - type: integer 
 	Parameter transparent_mask bound to: 12'b000000000000 
-INFO: [Synth 8-6157] synthesizing module 'enemy_ROM' [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-3793941-rsws13.kaust.edu.sa/realtime/enemy_ROM_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'enemy_ROM' (1#1) [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-3793941-rsws13.kaust.edu.sa/realtime/enemy_ROM_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'enemy' (2#1) [/home/menao/Project_Test/fpga/source_files/enemy.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'enemy_flipped' [/home/menao/Project_Test/fpga/source_files/enemy_flipped.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'enemy_ROM' [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2331071-rsws13.kaust.edu.sa/realtime/enemy_ROM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'enemy_ROM' (1#1) [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2331071-rsws13.kaust.edu.sa/realtime/enemy_ROM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'enemy' (2#1) [/home/menao/Project_Test/fpga/source_files/enemy_flipped.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'enemy_flipped' [/home/menao/Project_Test/fpga/source_files/enemy_flipped.sv:146]
 	Parameter width bound to: 8 - type: integer 
 	Parameter length bound to: 48 - type: integer 
 	Parameter x_size bound to: 48 - type: integer 
@@ -45,12 +45,12 @@ INFO: [Synth 8-6157] synthesizing module 'enemy_flipped' [/home/menao/Project_Te
 	Parameter x_start bound to: 640 - type: integer 
 	Parameter y_start bound to: 60 - type: integer 
 	Parameter transparent_mask bound to: 12'b000000000000 
-INFO: [Synth 8-6155] done synthesizing module 'enemy_flipped' (3#1) [/home/menao/Project_Test/fpga/source_files/enemy_flipped.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-3793941-rsws13.kaust.edu.sa/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (4#1) [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-3793941-rsws13.kaust.edu.sa/realtime/clk_wiz_0_stub.v:5]
-WARNING: [Synth 8-7071] port 'reset' of module 'clk_wiz_0' is unconnected for instance 'instance_name' [/home/menao/Project_Test/fpga/source_files/project_toplevel.sv:54]
-WARNING: [Synth 8-7071] port 'locked' of module 'clk_wiz_0' is unconnected for instance 'instance_name' [/home/menao/Project_Test/fpga/source_files/project_toplevel.sv:54]
-WARNING: [Synth 8-7023] instance 'instance_name' of module 'clk_wiz_0' has 4 connections declared, but only 2 given [/home/menao/Project_Test/fpga/source_files/project_toplevel.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'enemy_flipped' (3#1) [/home/menao/Project_Test/fpga/source_files/enemy_flipped.sv:146]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2331071-rsws13.kaust.edu.sa/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (4#1) [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2331071-rsws13.kaust.edu.sa/realtime/clk_wiz_0_stub.v:5]
+WARNING: [Synth 8-7071] port 'reset' of module 'clk_wiz_0' is unconnected for instance 'instance_name' [/home/menao/Project_Test/fpga/source_files/project_toplevel.sv:57]
+WARNING: [Synth 8-7071] port 'locked' of module 'clk_wiz_0' is unconnected for instance 'instance_name' [/home/menao/Project_Test/fpga/source_files/project_toplevel.sv:57]
+WARNING: [Synth 8-7023] instance 'instance_name' of module 'clk_wiz_0' has 4 connections declared, but only 2 given [/home/menao/Project_Test/fpga/source_files/project_toplevel.sv:57]
 INFO: [Synth 8-6157] synthesizing module 'vga_controller' [/home/menao/Project_Test/fpga/source_files/vga_controller.sv:23]
 	Parameter hpixels bound to: 799 - type: integer 
 	Parameter hsync_size bound to: 96 - type: integer 
@@ -61,9 +61,9 @@ INFO: [Synth 8-6157] synthesizing module 'vga_controller' [/home/menao/Project_T
 	Parameter vbp bound to: 33 - type: integer 
 	Parameter v_res bound to: 480 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'vga_controller' (5#1) [/home/menao/Project_Test/fpga/source_files/vga_controller.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-3793941-rsws13.kaust.edu.sa/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (6#1) [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-3793941-rsws13.kaust.edu.sa/realtime/blk_mem_gen_0_stub.v:6]
-WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (19) of module 'blk_mem_gen_0' [/home/menao/Project_Test/fpga/source_files/project_toplevel.sv:61]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2331071-rsws13.kaust.edu.sa/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (6#1) [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2331071-rsws13.kaust.edu.sa/realtime/blk_mem_gen_0_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (19) of module 'blk_mem_gen_0' [/home/menao/Project_Test/fpga/source_files/project_toplevel.sv:64]
 INFO: [Synth 8-6157] synthesizing module 'PS2Receiver' [/home/menao/Project_Test/fpga/source_files/ps2_keyboard.sv:26]
 INFO: [Synth 8-6157] synthesizing module 'debouncer' [/home/menao/Project_Test/fpga/source_files/debouncer.sv:42]
 INFO: [Synth 8-6155] done synthesizing module 'debouncer' (7#1) [/home/menao/Project_Test/fpga/source_files/debouncer.sv:42]
@@ -79,10 +79,10 @@ INFO: [Synth 8-6157] synthesizing module 'char_driver' [/home/menao/Project_Test
 	Parameter x_size bound to: 32 - type: integer 
 	Parameter y_size bound to: 32 - type: integer 
 	Parameter transparent_mask bound to: 12'b000000000000 
-INFO: [Synth 8-6157] synthesizing module 'char_ROM' [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-3793941-rsws13.kaust.edu.sa/realtime/char_ROM_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'char_ROM' (10#1) [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-3793941-rsws13.kaust.edu.sa/realtime/char_ROM_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'char_ROM_diag' [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-3793941-rsws13.kaust.edu.sa/realtime/char_ROM_diag_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'char_ROM_diag' (11#1) [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-3793941-rsws13.kaust.edu.sa/realtime/char_ROM_diag_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'char_ROM' [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2331071-rsws13.kaust.edu.sa/realtime/char_ROM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'char_ROM' (10#1) [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2331071-rsws13.kaust.edu.sa/realtime/char_ROM_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'char_ROM_diag' [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2331071-rsws13.kaust.edu.sa/realtime/char_ROM_diag_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'char_ROM_diag' (11#1) [/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2331071-rsws13.kaust.edu.sa/realtime/char_ROM_diag_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'char_driver' (12#1) [/home/menao/Project_Test/fpga/source_files/char_driver.sv:22]
 INFO: [Synth 8-6157] synthesizing module 'lfsr_random_dynamic_seed' [/home/menao/Project_Test/fpga/cs256_project.srcs/sources_1/imports/source_files/lfsr_random_12bit.sv:1]
 	Parameter SEED_INTERVAL bound to: 1000 - type: integer 
@@ -97,18 +97,18 @@ INFO: [Synth 8-6155] done synthesizing module 'sevenseg' (14#1) [/home/menao/Pro
 INFO: [Synth 8-6155] done synthesizing module 'multidigit' (15#1) [/home/menao/Project_Test/fpga/source_files/multidigit.sv:23]
 INFO: [Synth 8-6155] done synthesizing module 'project_toplevel' (16#1) [/home/menao/Project_Test/fpga/source_files/project_toplevel.sv:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2379.992 ; gain = 5.047 ; free physical = 994833 ; free virtual = 1010512
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2380.820 ; gain = 0.000 ; free physical = 1000769 ; free virtual = 1022837
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2394.836 ; gain = 19.891 ; free physical = 994814 ; free virtual = 1010490
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2394.711 ; gain = 13.891 ; free physical = 1000785 ; free virtual = 1022851
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2394.836 ; gain = 19.891 ; free physical = 994814 ; free virtual = 1010490
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2394.711 ; gain = 13.891 ; free physical = 1000785 ; free virtual = 1022851
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2394.836 ; gain = 0.000 ; free physical = 994805 ; free virtual = 1010482
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2394.711 ; gain = 0.000 ; free physical = 1000781 ; free virtual = 1022847
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -168,20 +168,20 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/project_toplevel_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2563.586 ; gain = 0.000 ; free physical = 994669 ; free virtual = 1010346
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2563.461 ; gain = 0.000 ; free physical = 1000669 ; free virtual = 1022735
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2563.586 ; gain = 0.000 ; free physical = 994654 ; free virtual = 1010331
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2563.461 ; gain = 0.000 ; free physical = 1000666 ; free virtual = 1022732
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 2563.586 ; gain = 188.641 ; free physical = 994725 ; free virtual = 1010403
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 2563.461 ; gain = 182.641 ; free physical = 1000711 ; free virtual = 1022779
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 2563.586 ; gain = 188.641 ; free physical = 994735 ; free virtual = 1010414
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 2563.461 ; gain = 182.641 ; free physical = 1000719 ; free virtual = 1022787
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -209,20 +209,20 @@ Applied set_property KEEP_HIERARCHY = SOFT for \enemies[6].enemy_flipped_inst /e
 Applied set_property KEEP_HIERARCHY = SOFT for \enemies[7].enemy_inst /enemy_ROM_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for \enemies[7].enemy_flipped_inst /enemy_ROM_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 2563.586 ; gain = 188.641 ; free physical = 994737 ; free virtual = 1010414
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 2563.461 ; gain = 182.641 ; free physical = 1000724 ; free virtual = 1022790
 ---------------------------------------------------------------------------------
-DSP Debug: swapped A/B pins for adder 0x50f00be0
-DSP Debug: swapped A/B pins for adder 0x4c1894a0
-DSP Debug: swapped A/B pins for adder 0x514a46e0
-DSP Debug: swapped A/B pins for adder 0x523dd0c0
-DSP Debug: swapped A/B pins for adder 0x4e65abe0
-DSP Debug: swapped A/B pins for adder 0x50351de0
-DSP Debug: swapped A/B pins for adder 0x40b879d0
-DSP Debug: swapped A/B pins for adder 0x525af7f0
-DSP Debug: swapped A/B pins for adder 0x4d67ab40
-WARNING: [Synth 8-327] inferring latch for variable 'diag_reg' [/home/menao/Project_Test/fpga/source_files/char_driver.sv:122]
+DSP Debug: swapped A/B pins for adder 0x3a1f2a00
+DSP Debug: swapped A/B pins for adder 0x4db952c0
+DSP Debug: swapped A/B pins for adder 0x3a284500
+DSP Debug: swapped A/B pins for adder 0x3a77eee0
+DSP Debug: swapped A/B pins for adder 0x35794a00
+DSP Debug: swapped A/B pins for adder 0x3bbd9c00
+DSP Debug: swapped A/B pins for adder 0x2a0af250
+DSP Debug: swapped A/B pins for adder 0x37eeb610
+DSP Debug: swapped A/B pins for adder 0x3aa9e960
+WARNING: [Synth 8-327] inferring latch for variable 'diag_reg' [/home/menao/Project_Test/fpga/source_files/char_driver.sv:107]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 2563.586 ; gain = 188.641 ; free physical = 994791 ; free virtual = 1010469
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2563.461 ; gain = 182.641 ; free physical = 1000738 ; free virtual = 1022805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -282,7 +282,7 @@ DSP Report: Generating DSP addra0, operation Mode is: C+A*(B:0x280).
 DSP Report: operator addra0 is absorbed into DSP addra0.
 DSP Report: operator addra1 is absorbed into DSP addra0.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:00:55 . Memory (MB): peak = 3020.570 ; gain = 645.625 ; free physical = 994664 ; free virtual = 1010342
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:00:53 . Memory (MB): peak = 3021.445 ; gain = 640.625 ; free physical = 1000592 ; free virtual = 1022660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -303,19 +303,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:56 ; elapsed = 00:01:02 . Memory (MB): peak = 3020.570 ; gain = 645.625 ; free physical = 994614 ; free virtual = 1010291
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:55 ; elapsed = 00:01:00 . Memory (MB): peak = 3021.445 ; gain = 640.625 ; free physical = 1000539 ; free virtual = 1022607
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:01:03 . Memory (MB): peak = 3020.570 ; gain = 645.625 ; free physical = 994597 ; free virtual = 1010274
+Finished Timing Optimization : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 3021.445 ; gain = 640.625 ; free physical = 1000505 ; free virtual = 1022572
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:00 ; elapsed = 00:01:06 . Memory (MB): peak = 3020.570 ; gain = 645.625 ; free physical = 994590 ; free virtual = 1010268
+Finished Technology Mapping : Time (s): cpu = 00:00:58 ; elapsed = 00:01:04 . Memory (MB): peak = 3021.445 ; gain = 640.625 ; free physical = 1000492 ; free virtual = 1022560
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -334,37 +334,37 @@ Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 CRITICAL WARNING: [Synth 8-4442] BlackBox module instance_name has unconnected pin reset
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:03 ; elapsed = 00:01:09 . Memory (MB): peak = 3020.570 ; gain = 645.625 ; free physical = 994573 ; free virtual = 1010251
+Finished IO Insertion : Time (s): cpu = 00:01:01 ; elapsed = 00:01:07 . Memory (MB): peak = 3021.445 ; gain = 640.625 ; free physical = 1000524 ; free virtual = 1022592
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:03 ; elapsed = 00:01:09 . Memory (MB): peak = 3020.570 ; gain = 645.625 ; free physical = 994570 ; free virtual = 1010248
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:01 ; elapsed = 00:01:07 . Memory (MB): peak = 3021.445 ; gain = 640.625 ; free physical = 1000534 ; free virtual = 1022602
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:03 ; elapsed = 00:01:09 . Memory (MB): peak = 3020.570 ; gain = 645.625 ; free physical = 994590 ; free virtual = 1010267
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:02 ; elapsed = 00:01:07 . Memory (MB): peak = 3021.445 ; gain = 640.625 ; free physical = 1000516 ; free virtual = 1022583
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:03 ; elapsed = 00:01:09 . Memory (MB): peak = 3020.570 ; gain = 645.625 ; free physical = 994588 ; free virtual = 1010266
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:02 ; elapsed = 00:01:07 . Memory (MB): peak = 3021.445 ; gain = 640.625 ; free physical = 1000513 ; free virtual = 1022580
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:03 ; elapsed = 00:01:09 . Memory (MB): peak = 3020.570 ; gain = 645.625 ; free physical = 994604 ; free virtual = 1010282
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:02 ; elapsed = 00:01:07 . Memory (MB): peak = 3021.445 ; gain = 640.625 ; free physical = 1000506 ; free virtual = 1022574
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:03 ; elapsed = 00:01:09 . Memory (MB): peak = 3020.570 ; gain = 645.625 ; free physical = 994586 ; free virtual = 1010264
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:02 ; elapsed = 00:01:07 . Memory (MB): peak = 3021.445 ; gain = 640.625 ; free physical = 1000510 ; free virtual = 1022577
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -411,19 +411,19 @@ Report Cell Usage:
 |38    |OBUFT         |     1|
 +------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:03 ; elapsed = 00:01:09 . Memory (MB): peak = 3020.570 ; gain = 645.625 ; free physical = 994594 ; free virtual = 1010272
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:02 ; elapsed = 00:01:07 . Memory (MB): peak = 3021.445 ; gain = 640.625 ; free physical = 1000519 ; free virtual = 1022587
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 1 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:01 ; elapsed = 00:01:07 . Memory (MB): peak = 3020.570 ; gain = 476.875 ; free physical = 994650 ; free virtual = 1010327
-Synthesis Optimization Complete : Time (s): cpu = 00:01:03 ; elapsed = 00:01:09 . Memory (MB): peak = 3020.578 ; gain = 645.625 ; free physical = 994645 ; free virtual = 1010323
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:00 ; elapsed = 00:01:05 . Memory (MB): peak = 3021.445 ; gain = 471.875 ; free physical = 1000590 ; free virtual = 1022657
+Synthesis Optimization Complete : Time (s): cpu = 00:01:02 ; elapsed = 00:01:07 . Memory (MB): peak = 3021.453 ; gain = 640.625 ; free physical = 1000593 ; free virtual = 1022660
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3020.578 ; gain = 0.000 ; free physical = 994752 ; free virtual = 1010430
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3021.453 ; gain = 0.000 ; free physical = 1000666 ; free virtual = 1022734
 INFO: [Netlist 29-17] Analyzing 698 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3052.586 ; gain = 0.000 ; free physical = 994674 ; free virtual = 1010351
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3053.461 ; gain = 0.000 ; free physical = 1000632 ; free virtual = 1022699
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   LD => LDCE: 1 instance 
@@ -431,8 +431,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 53 Infos, 19 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:13 ; elapsed = 00:01:17 . Memory (MB): peak = 3052.586 ; gain = 677.641 ; free physical = 994820 ; free virtual = 1010497
+synth_design: Time (s): cpu = 00:01:12 ; elapsed = 00:01:15 . Memory (MB): peak = 3053.461 ; gain = 672.641 ; free physical = 1000777 ; free virtual = 1022844
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+WARNING: [Runs 36-115] Could not delete directory '/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/.Xil/Vivado-2331071-rsws13.kaust.edu.sa/dcp0'.
 INFO: [Common 17-1381] The checkpoint '/home/menao/Project_Test/fpga/cs256_project.runs/synth_1/project_toplevel.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file project_toplevel_utilization_synth.rpt -pb project_toplevel_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Nov 27 15:05:59 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  5 01:14:13 2024...

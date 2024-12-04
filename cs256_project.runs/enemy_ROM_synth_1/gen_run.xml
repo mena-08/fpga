@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="enemy_ROM_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1732690732">
-  <File Type="VDS-TIMING-PB" Name="enemy_ROM_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="enemy_ROM_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="enemy_ROM.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="enemy_ROM_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="enemy_ROM_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="enemy_ROM_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="enemy_ROM.vds"/>
   <File Type="REPORTS-TCL" Name="enemy_ROM_reports.tcl"/>
   <File Type="PA-TCL" Name="enemy_ROM.tcl"/>
+  <File Type="RDS-DCP" Name="enemy_ROM.dcp"/>
+  <File Type="RDS-RDS" Name="enemy_ROM.vds"/>
+  <File Type="RDS-UTIL" Name="enemy_ROM_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="enemy_ROM_utilization_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/enemy_ROM">
     <File Path="$PSRCDIR/sources_1/ip/enemy_ROM/enemy_ROM.xci">
       <FileInfo>

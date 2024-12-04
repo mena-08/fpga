@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 19
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -99,7 +98,6 @@ add_files /home/menao/Project_Test/fpga/source_files/enemyv2.coe
 read_verilog -library xil_defaultlib -sv {
   /home/menao/Project_Test/fpga/source_files/char_driver.sv
   /home/menao/Project_Test/fpga/source_files/debouncer.sv
-  /home/menao/Project_Test/fpga/source_files/enemy.sv
   /home/menao/Project_Test/fpga/source_files/enemy_flipped.sv
   /home/menao/Project_Test/fpga/cs256_project.srcs/sources_1/imports/source_files/graphics_driver.sv
   /home/menao/Project_Test/fpga/cs256_project.srcs/sources_1/imports/source_files/lfsr_random_12bit.sv

@@ -26,7 +26,6 @@ module char_driver(
     input [3:0]controls,
     
     output logic [11:0] char_color
-
 );
 
     parameter x_start = 640 / 2, y_start = 480 / 2;
@@ -35,43 +34,33 @@ module char_driver(
     logic signed [10:0] x_new, y_new;
 
     logic signed [3:0] x_vel = 0, y_vel = 0;
-//    logic signed [3:0] x_acc = 0, y_acc = 0;
-//    parameter signed [3:0] MAX_VEL = 127;  // Maximum velocity limit (+ or -)
 
-
-        
+    //directional controls
     logic UP,DOWN,LEFT,RIGHT;
     assign UP = controls[0] & en;
     assign DOWN = controls[3] & en;
     assign LEFT = controls[1] & en;
     assign RIGHT = controls[2] & en;
          
-    //    Movement Controls
     always_ff @ (posedge frame_clk or posedge rst) begin
         if (rst) begin 
             x_pos <= x_start;
             y_pos <= y_start;
-//            x_vel <= 1;  // Reset velocity to default
-//            y_vel <= 1; 
         end else if(en) begin
-            // Handle X-axis bouncing with explicit boundary constraints
+            //handle X boundaries
             if(x_new < 0) begin
                 x_pos <= 0;   // Stick to left boundary
-//                x_vel <= 1;   // Bounce to the right
             end else if(x_new + x_size >= 640) begin
                 x_pos <= 640 - x_size;  // Stick to right boundary
-//                x_vel <= -1;  // Bounce to the left
             end else begin
                 x_pos <= x_new;  // Normal position update
             end
 
-            // Handle Y-axis bouncing with explicit boundary constraints
+            //handle Y boundaries
             if(y_new < 0) begin
                 y_pos <= 0;   // Stick to top boundary
-//                y_vel <= 1;   // Bounce downwards
             end else if(y_new + y_size >= 480) begin
                 y_pos <= 480 - y_size;  // Stick to bottom boundary
-//                y_vel <= -1;  // Bounce upwards
             end else begin
                 y_pos <= y_new;  // Normal position update
             end
@@ -91,8 +80,6 @@ module char_driver(
             x_vel <= 3;    // Clamp to MAX_VEL
         else
             x_vel <= 0;  // No X-axis control, reset X velocity
-                
-                
         end
     end
     
@@ -114,8 +101,6 @@ module char_driver(
         is_char = ((drawX >= x_pos) && (drawX < x_pos + x_size) && (drawY >= y_pos) && (drawY < y_pos + y_size));
 
         if (is_char)
-//            char_color = 12'hFA5;  // Character color when visible
-//            char_addr = (drawX - x_pos) + x_size*(drawY - y_pos);
             if (UP && !LEFT && !RIGHT) begin
                 // Normal orientation (no flipping)
                 char_addr = (drawX - x_pos) + x_size * (drawY - y_pos);
@@ -169,12 +154,10 @@ module char_driver(
         else
             char_addr = 0;  // Transparent when not visible
             
-            
-            
-    if(diag)
-        char_color = char_color1;
-    else
-        char_color = char_color0;
+        if(diag)
+            char_color = char_color1;
+        else
+            char_color = char_color0;
    
     end
     

@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Wed Nov 27 15:07:19 2024
+| Date         : Thu Dec  5 01:15:26 2024
 | Host         : rsws13.kaust.edu.sa running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_drc -file project_toplevel_drc_opted.rpt -pb project_toplevel_drc_opted.pb -rpx project_toplevel_drc_opted.rpx
 | Design       : project_toplevel
